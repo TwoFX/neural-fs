@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "neural-fs", "neural-fs\neural-fs.fsproj", "{1DEB9383-FDD3-4497-B724-29D498B74771}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neural-cs", "neural-cs\neural-cs.csproj", "{90A50870-BE20-424B-9013-EA4E4AC36BC1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "neural-fs-types", "neural-fs-types\neural-fs-types.fsproj", "{8D9FFB04-B183-45B6-8FBB-00ACF0C06514}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1DEB9383-FDD3-4497-B724-29D498B74771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEB9383-FDD3-4497-B724-29D498B74771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEB9383-FDD3-4497-B724-29D498B74771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A50870-BE20-424B-9013-EA4E4AC36BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A50870-BE20-424B-9013-EA4E4AC36BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A50870-BE20-424B-9013-EA4E4AC36BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A50870-BE20-424B-9013-EA4E4AC36BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9FFB04-B183-45B6-8FBB-00ACF0C06514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9FFB04-B183-45B6-8FBB-00ACF0C06514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9FFB04-B183-45B6-8FBB-00ACF0C06514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9FFB04-B183-45B6-8FBB-00ACF0C06514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
