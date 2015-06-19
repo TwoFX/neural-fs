@@ -27,7 +27,28 @@ let query<'source, 'meaning when 'source : equality and 'meaning : equality> (va
     |> Seq.map (fun n ->
         match n with 
         | OutputNeuron (_, _, meaning) -> meaning
-        | _ -> failwith "Boom. You crashed (and burned). Don't create Neural Networks consisting of other stuff than OutputNeurons. But I'd rather throw this exception than throw up at the sight of the type safe variant.")
+        | _ -> failwith "Boom. You crashed (and burned). Don't create Neural Networks consisting of other stuff than OutputNeurons. I'd rather throw this exception than throw up at the sight of the type safe variant.")
 
-let train<'source, 'meaning> (network:NeuralNetwork<'source, 'meaning>) (tests:seq<'source * seq<'meaning>>) =
-    0
+let computeargc (inputNodes:int) (hiddenLayers:int) (nodesPerHidden:int) (outputNodes:int) =
+    inputNodes * nodesPerHidden + (hiddenLayers - 1) * nodesPerHidden * nodesPerHidden + nodesPerHidden * outputNodes + nodesPerHidden * hiddenLayers + outputNodes
+
+let makeNetwork a b c d e vals = NeuralHelpers.FromVals (a, b, c, d, e, vals)
+
+let train<'source, 'meaning when 'source : comparison and 'meaning : comparison> activated inputNodes hiddenLayers nodesPerHidden outputNodes meanings initmin initmax size chosen mutation gens tests =
+    genetic (fun inp ->
+        let network = makeNetwork inputNodes hiddenLayers nodesPerHidden outputNodes meanings inp
+        tests
+        |> Seq.sumBy (fun ((source, output):'source * seq<'meaning>) -> (network
+            |> query source activated
+            |> Set.ofSeq
+            |> (Set.intersect <| Set.ofSeq output)
+            |> Set.count
+            |> float)))
+            (computeargc inputNodes hiddenLayers nodesPerHidden outputNodes)
+            initmin
+            initmax
+            size
+            chosen
+            mutation
+            gens
+    |> makeNetwork inputNodes hiddenLayers nodesPerHidden outputNodes meanings

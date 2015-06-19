@@ -9,7 +9,7 @@ namespace NeuralHelpers
 {
     public class NeuralHelpers
     {
-        public static IEnumerable<Neuron<TSource, TMeaning>> FromVals<TSource, TMeaning>(int inputNodes, int hiddenLayers, int hiddenNodesPerLayer, int outputNodes, IEnumerable<double> values, IEnumerable<TMeaning> meanings)
+        public static IEnumerable<Neuron<TSource, TMeaning>> FromVals<TSource, TMeaning>(int inputNodes, int hiddenLayers, int hiddenNodesPerLayer, int outputNodes, IEnumerable<TMeaning> meanings, IEnumerable<double> values)
         {
             var startLayer = new Neuron<TSource, TMeaning>[inputNodes];
             Queue<double> vals = new Queue<double>(values);
