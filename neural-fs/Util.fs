@@ -13,3 +13,5 @@ let memoize f =
             temp
 
 let fix a b = a
+
+let flip f a b = f b a
