@@ -1,7 +1,5 @@
 ﻿module Genetic
 
-open System
-
 let rnd = System.Random()
 
 let makeNew (mutation:double) (number:int) (winners:seq<seq<double>>) =
