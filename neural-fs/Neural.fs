@@ -3,7 +3,7 @@
 open Util
 open Genetic
 open NeuralTypes
-open neural_cs
+open NeuralHelpers
 
 // I don't want to have to check NeuralType.fs every time I want to know types.
 //type Neuron<'source, 'meaning> =
