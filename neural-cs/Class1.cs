@@ -9,7 +9,12 @@ namespace neural_cs
 {
     public class NeuralHelpers
     {
-        static Neuron<TSource, TMeaning> FromVals<TSource, TMeaning>()
+        static string FromVals<TSource, TMeaning>(int inputNodes, int hiddenLayers, int hiddenNodesPerLayer, int outputNodes, double[] values)
+        {
+            return null;
+        }
+
+        static double[] toVals()
         {
             return null;
         }
