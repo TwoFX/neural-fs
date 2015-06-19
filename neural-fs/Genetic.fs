@@ -5,7 +5,7 @@ open Util
 let rnd = System.Random()
 
 let makeNew (mutation:double) (number:int) (winners:seq<seq<double>>) =
-    Seq.map (fun genome -> Seq.init number (fun _ -> genome)) winners
+    Seq.map (fun genome -> Seq.init number (fix genome)) winners
     |> Seq.concat
     |> Seq.map 
         (Seq.map ((*) (rnd.NextDouble() * 2.0 * mutation + (1.0 - mutation))))
@@ -20,4 +20,5 @@ let rec mutate (fitness:seq<double> -> double) (size:int) (chosen:int) (mutation
 
 let genetic (fitness:seq<double> -> double) (argc:int) (initmin:double) (initmax:double) (size:int) (chosen:int) (mutation:double) (gens:int) =
     Seq.init size (fix <| Seq.init argc (fix <| rnd.NextDouble() * (initmax - initmin) + initmin))
-    |> mutate fitness size chosen mutation gens |> Seq.maxBy fitness
+    |> mutate fitness size chosen mutation gens
+    |> Seq.maxBy fitness
