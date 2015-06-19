@@ -5,7 +5,7 @@ open Util
 let rnd = System.Random()
 
 let makeNew (mutation:double) (number:int) (winners:seq<seq<double>>) =
-    Seq.map (fun genome -> Seq.init number (fix genome)) winners
+    Seq.map (fun genome -> Seq.init number <| fix genome) winners
     |> Seq.concat
     |> Seq.map 
         (Seq.map ((*) (rnd.NextDouble() * 2.0 * mutation + (1.0 - mutation))))
