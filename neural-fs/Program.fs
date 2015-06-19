@@ -2,7 +2,7 @@
 
 open System
 open Neural
-open neural_cs
+open NeuralHelpers
 
 [<EntryPoint>]
 let main argv = 
