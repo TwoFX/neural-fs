@@ -38,10 +38,5 @@ namespace NeuralHelpers
             }
             return outputLayer;
         }
-
-        public static double[] toVals<TSource, TMeaning>(IEnumerable<Neuron<TSource, TMeaning>> network)
-        {
-            return null;
-        }
     }
 }
